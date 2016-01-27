@@ -10,6 +10,7 @@
         <link rel="apple-touch-icon" href="apple-touch-icon.png">
         <!-- Place favicon.ico in the root directory -->
 
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
         <link rel="stylesheet" href="css/normalize.css">
         <link rel="stylesheet" href="css/main.css">
         <script src="js/vendor/modernizr-2.8.3.min.js"></script>
@@ -17,20 +18,28 @@
     <body>
 
         <div class="face-wrapper">
-            <img src="img/mask.png" class="mask" />
+            <div class="mask-container directions-visible">
+                <img src="img/mask.png" class="mask" id="mask" />
+            </div>
+            
+            
             <img src="img/face.jpg" class="face-pic" />
+            
+            
         </div>
         
         <div class="clear"></div>
 
         <div class="button-wrapper">
-            <button class="copy-img" type="button">Copy Image</button>
+            <button class="copy-img" type="button">
+                <i class="fa fa-camera-retro"></i>&nbsp;&nbsp;
+                Copy Superhero (shown below)
+            </button>
         </div>
         <div class="clear"></div>
 
-        <div class="centered-result">
+        <div class="centered-result"></div>
 
-        </div>
 
         <script src="js/vendor/interact.js"></script>
         <script src="js/vendor/html2canvas.js"></script>

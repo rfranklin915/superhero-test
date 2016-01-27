@@ -1,6 +1,8 @@
 
+var angle = 0;
+
 // target elements with the "draggable" class
-interact('.mask')
+interact('.mask-container')
   .draggable({
       // enable inertial throwing
       inertia: true,
@@ -47,8 +49,20 @@ interact('.mask')
 
       target.setAttribute('data-x', x);
       target.setAttribute('data-y', y);
-      target.textContent = Math.round(event.rect.width) + '×' + Math.round(event.rect.height);
   });
+
+  //  .gesturable({
+  //    onmove: function (event) {
+  //        var arrow = document.getElementById('mask');
+
+  //        angle += event.da;
+
+  //        arrow.style.webkitTransform =
+  //        arrow.style.transform =
+  //          'rotate(' + angle + 'deg)';
+
+  //    }
+  //});
 
 function dragMoveListener(event) {
     var target = event.target,
@@ -70,13 +84,25 @@ function dragMoveListener(event) {
 window.dragMoveListener = dragMoveListener;
 
 
+
+
+
 $(window).load(function () {
     $('.copy-img').click(function () {
+        $('.mask-container').removeClass('directions-visible');
         $('canvas').detach();
         html2canvas($('.face-wrapper'), {
             onrendered: function (canvas) {
+                $('.centered-result img').detach();
                 var myImage = canvas.toDataURL("image/png");
-                $('.centered-result').append('<img src="' + myImage + '"/>');
+                $('.centered-result').append('<img class="generated-image" src="' + myImage + '"/>');
+                $('.mask-container').addClass('directions-visible');
+
+                //scroll down to image
+                $('html, body').animate({
+                    scrollTop: $('img.generated-image').offset().top
+                }, 1000);
+
             }
         });
         return false;
