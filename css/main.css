@@ -1,0 +1,52 @@
+
+html {
+       overflow-y: scroll;
+}
+
+.clear {
+    clear:both;
+}
+
+.face-wrapper {
+    margin:0 auto;
+    position:relative;
+    max-width:800px;
+}
+
+.face-pic {
+    top:0;
+    left:0;
+    max-width:100%;
+    z-index:50;
+}
+
+.mask {
+    z-index:99;
+    position:relative;
+    max-width:100%;
+    width:500px;
+    display:block;
+    position:absolute;
+}
+
+.button-wrapper {
+    padding:40px 0;
+}
+
+button.copy-img {
+    background:#144699;
+    border:0;
+    padding:15px 40px;
+    color:#ffffff;
+    display:block;
+    margin:0 auto;
+}
+
+canvas {
+    margin:0 auto;
+    display:block;
+}
+
+.centered-result {
+    text-align:center;
+}
